@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Viva La Vida Event Planners</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        /* Stylesheet */
+        body {
+            font-family: 'Montserrat', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #bae766;
+            color: #333;
+        }
+
+        header {
+            background-color: #333;
+            color: #775656;
+            padding: 10px;
+            text-align: center;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1000;
+            transition: background-color 0.5s;
+        }
+
+        header.scrolled {
+            background-color: #222;
+        }
+
+        nav ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        nav ul li {
+            display: inline;
+            margin-right: 20px;
+        }
+
+        nav ul li a {
+            color: #aeca6c;
+            text-decoration: none;
+            font-size: 18px;
+            transition: color 0.3s;
+        }
+
+        nav ul li a:hover {
+            color: #fff;
+        }
+
+        section {
+            padding: 100px 0;
+            text-align: center;
+        }
+
+        h1, h2, h3 {
+            color: #6d5353;
+            font-weight: bold;
+        }
+
+        .gallery {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .gallery img {
+            width: 30%;
+            margin: 10px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s ease-in-out;
+        }
+
+        .gallery img:hover {
+            transform: scale(1.05);
+        }
+
+        .testimonial {
+            border-left: 4px solid #17a4b3;
+            padding-left: 20px;
+            margin-bottom: 30px;
+            text-align: left;
+        }
+
+        .blog-post {
+            border-bottom: 1px solid #acce3d;
+            padding-bottom: 20px;
+            margin-bottom: 20px;
+            text-align: left;
+        }
+
+        footer {
+            background-color: #584343;
+            color: #9be067;
+            text-align: center;
+            padding: 20px;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+
+        /* Additional Styles */
+        .hero {
+            background-image: url('hero-bg.jpg');
+            background-size: cover;
+            background-position: center;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            color: #453c3c;
+            transition: background-image 0.5s;
+        }
+
+        .hero h1 {
+            font-size: 3em;
+            margin-bottom: 20px;
+        }
+
+        .hero p {
+            font-size: 1.5em;
+            margin-bottom: 40px;
+        }
+
+        .contact-form {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .contact-form input[type="text"],
+        .contact-form input[type="email"],
+        .contact-form textarea {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 20px;
+            border: none;
+            border-radius: 5px;
+            box-sizing: border-box;
+            font-size: 16px;
+        }
+
+        .contact-form textarea {
+            resize: vertical;
+            min-height: 150px;
+        }
+
+        .contact-form input[type="submit"] {
+            background-color: #333;
+            color: #fff;
+            padding: 15px 30px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .contact-form input[type="submit"]:hover {
+            background-color: #555;
+        }
+
+        .confirmation {
+            display: none;
+            color: green;
+            margin-top: 10px;
+        }
+
+        .services-container {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .service {
+            margin: 20px;
+            max-width: 300px;
+            text-align: left;
+        }
+
+        .service img {
+            width: 100%;
+            border-radius: 10px;
+            margin-bottom: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+        }
+
+        @media screen and (max-width: 768px) {
+            .gallery img {
+                width: 100%;
+            }
+
+            .hero h1 {
+                font-size: 2em;
+            }
+
+            .hero p {
+                font-size: 1.2em;
+            }
+
+            .service {
+                max-width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<!-- Navigation Bar -->
+<header>
+    <nav>
+        <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#services">Services</a></li>
+            <li><a href="#gallery">Gallery</a></li>
+            <li><a href="#team">Our Team</a></li>
+            <li><a href="#testimonials">Testimonials</a></li>
+            <li><a href="#blog">Blog</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+</header>
+
+<!-- Hero Section -->
+<section class="hero" id="home">
+    <h1>Welcome to Viva La Vida Event Planners</h1>
+    <p>Where dreams become reality and every occasion is a masterpiece in the making. With a passion for creativity and an unwavering commitment to excellence, we specialize in crafting unforgettable experiences tailored to your unique vision. From intimate gatherings to grand celebrations, our team of seasoned professionals is dedicated to orchestrating events that leave a lasting impression.
+
+        Experience the difference of personalized service and meticulous attention to detail as we transform your ideas into breathtaking realities. Whether you're planning a wedding, corporate event, or social soirée, trust us to handle every aspect with precision and flair. Let's collaborate and turn your event into an extraordinary affair that surpasses all expectations.
+        
+        Join us on a journey where imagination knows no bounds and every moment is designed to enchant. Your extraordinary event starts here, with Viva la vida . Welcome to a world of limitless possibilities."
+        
+        
+        
+        
+        </p>
+    <p>Discover unforgettable events tailored just for you!</p>
+</section>
+
+<!-- About Section -->
+<section id="about">
+    <h2>About Us</h2>
+    <p>" We are passionate visionaries dedicated to crafting unforgettable events that leave a lasting impression. With years of experience and a keen eye for detail, our innovative team specializes in bringing your dreams to life, one exquisite event at a time. We pride ourselves on being customer-focused, collaborative professionals who work tirelessly to ensure your event exceeds expectations. Whether it's a wedding, corporate gathering, or social affair, we approach each project with professionalism, versatility, and a commitment to excellence. Our transparent communication, sustainable practices, and relentless pursuit of excellence set us apart, making us the trusted choice for all your event planning needs. Discover the difference of working with a team that shares your passion for perfection and join us in creating moments that will be cherished forever."
+
+
+
+
+    </p>
+</section>
+
+<!-- Our Services Section -->
+<section id="services">
+    <h2>Our Services</h2>
+    <div class="services-container">
+        <div class="service">
+            <img src="wedding-planning.jpg" alt="Wedding Planning">
+            <h3>Wedding Planning</h3>
+            <p>We specialize in creating magical weddings tailored to your dreams. From venue selection to decor and coordination, we handle every detail with precision and care.</p>
+        </div>
+        <div class="service">
+            <img src="cordinate-event.jpg" alt="Corporate Events">
+            <h3>Corporate Events</h3>
+            <p>Impress your clients and employees with unforgettable corporate events. Whether it's a conference, gala dinner, or team-building retreat, we'll ensure it's a resounding success.</p>
+        </div>
+        <div class="service">
+            <img src="birthday-parties.jpg" alt="Birthday Parties">
+            <h3>Birthday Parties</h3>
+            <p>Celebrate life's milestones in style with our expert birthday party planning services. From intimate gatherings to extravagant bashes, we'll make your special day one to remember.</p>
+        </div>
+    </div>
+</section>
+
+<!-- Gallery Section -->
+<section id="gallery">
+    <h2>Image Gallery</h2>
+    <div class="gallery">
+        <img src="image1.png" alt="Event Image 1">
+        <img src="image 2.png" alt="Event Image 2">
+        <img src="image 3.png" alt="Event Image 3">
+        <!-- Add more images as needed -->
+    </div>
+</section>
+
+<!-- Our Team Section -->
+<section id="team">
+    <h2>Our Team</h2>
+    <div class="team">
+        <div class="team-member">
+            <img src="team-member1.jpeg" alt="Team Member 1">
+            <h3>John Doe</h3>
+            <p>Event Manager</p>
+        </div>
+        <div class="team-member">
+            <img src="team-member2.jpeg" alt="Team Member 2">
+            <h3>Jane Smith</h3>
+            <p>Wedding Planner</p>
+        </div>
+        <!-- Add more team members as needed -->
+    </div>
+</section>
+
+<!-- Testimonials Section -->
+<section id="testimonials">
+    <h2>Client Testimonials</h2>
+    <div class="testimonial-carousel">
+        <div class="testimonial-slide">
+            <p>"I cannot express enough gratitude to Viva la vida for their exceptional event planning services. From the initial consultation to the final execution, they demonstrated professionalism, creativity, and an unwavering commitment to excellence. Thanks to their hard work and expertise, my event was a resounding success, and I received countless compliments from guests. I wholeheartedly recommend Viva la vida event planners to anyone in need of top-notch event planning services."</p>
+            <p>- Ray Johnson</p>
+        </div>
+        <div class="testimonial-slide">
+            <p>"I can't thank Viva la vida event planners enough for their exceptional service. They were responsive, organized, and incredibly resourceful throughout the entire planning process. Thanks to their expertise, my event was a huge success and enjoyed by all who attended. I wouldn't hesitate to enlist their services again in the future."</p>
+            <p>- Rossy</p>
+        </div>
+        <!-- Add more testimonials as needed -->
+    </div>
+</section>
+
+<!-- Blog Section -->
+<section id="blog">
+    <h2>Latest Blog Posts</h2>
+    <div class="blog-post">
+        <h3>Post Title</h3>
+        <p>"In our blog, we aim to inspire and inform our readers with a diverse range of topics designed to elevate their event planning experience. From sharing insightful tips and tricks for seamless execution to spotlighting the latest trends and innovations in the industry, we cover it all. You'll find behind-the-scenes stories of our most memorable events, client testimonials that speak to our commitment to excellence, and in-depth vendor spotlights that showcase the best in the business. Whether you're seeking DIY ideas to add a personal touch to your event or expert interviews offering invaluable advice, our blog is your go-to resource. Join us as we explore everything from budget-friendly solutions to destination event planning, providing you with the tools and inspiration you need to create unforgettable moments for any occasion."</p>
+        <a href="blog-post.html">Read More</a>
+    </div>
+    <!-- Add more blog posts as needed -->
+</section>
+
+<!-- Contact Section -->
+<section id="contact">
+    <h2>Contact Us</h2>
+    <div class="contact-form">
+        <form action="submit.php" method="post">
+            <input type="text" id="name" name="name" placeholder="Your Name" required><br>
+            <input type="email" id="email" name="email" placeholder="Your Email" required><br>
+            <textarea id="message" name="message" placeholder="Your Message" rows="4" required></textarea><br>
+            <input type="submit" value="Submit">
+            <p class="confirmation" id="confirmation">Thank you for contacting us!</p>
+        </form>
+    </div>
+</section>
+
+<!-- Footer -->
+<footer>
+    <p>&copy; 2024 Viva La Vida Event Planners. All rights reserved.</p>
+</footer>
+
+<!-- JavaScript for Smooth Page Scrolling -->
+<script>
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+            e.preventDefault();
+
+            document.querySelector(this.getAttribute('href')).scrollIntoView({
+                behavior: 'smooth'
+            });
+        });
+    });
+
+    window.addEventListener('scroll', function() {
+        const header = document.querySelector('header');
+        header.classList.toggle('scrolled', window.scrollY > 0);
+    });
+
+    const contactForm = document.querySelector('.contact-form');
+    const confirmationMessage = document.getElementById('confirmation');
+    contactForm.addEventListener('submit', function(event) {
+        event.preventDefault();
+        confirmationMessage.style.display = 'block';
+        setTimeout(() => {
+            confirmationMessage.style.display = 'none';
+        }, 3000);
+        this.reset();
+    });
+</script>
+
+</body>
+</html>
